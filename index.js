@@ -7,6 +7,14 @@ const app = express();
 
 
 
+const corsOptions = {
+  origin: '*',
+};
+
+app.use(cors(corsOptions));
+
+
+
 
 app.use(express.json());
 app.use("/auth", authRoutes);
@@ -44,6 +52,9 @@ mongoose
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   })
   .catch((err) => console.log(err));
+
+
+
 
 
 
